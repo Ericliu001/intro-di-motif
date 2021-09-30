@@ -10,8 +10,4 @@ class HomeActivity {
         val password = "password"
         authService.login(email, password)
     }
-
-    fun signOut() {
-        throw UnsupportedOperationException()
-    }
 }
