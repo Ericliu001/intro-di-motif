@@ -1,3 +1,5 @@
 package intro.di
 
-data class Profile(val name: String, val email: String)
+import java.util.*
+
+data class Profile(val uuid: UUID, val authToken: String)
