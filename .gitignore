@@ -1,5 +1,19 @@
+local.properties
+
+# Ignore Gradle project-specific cache directory
 .gradle
-/build/
+gradlew
+gradlew.bat
+
+# Ignore Gradle build output directory
+build
+lib/build/
+
+.idea
+.gradle
+**/build/
+!src/**/build/
+local.properties
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -9,6 +23,3 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
-
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
