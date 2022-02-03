@@ -1,5 +1,6 @@
 package intro.di
 
+import intro.di.network.NetworkClient
 import intro.di.network.RideRequestService
 import intro.di.network.RideRequestServiceImpl
 
@@ -11,8 +12,8 @@ interface LoggedInScope {
     abstract class Objects {
         abstract fun loggedInController(): LoggedInController
 
-        fun rideRequestService(profile: Profile): RideRequestService {
-            return RideRequestServiceImpl(profile)
+        fun rideRequestService(profile: Profile, networkClient: NetworkClient): RideRequestService {
+            return RideRequestServiceImpl(profile, networkClient)
         }
     }
 }

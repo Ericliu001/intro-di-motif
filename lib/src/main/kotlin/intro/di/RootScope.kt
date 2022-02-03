@@ -2,8 +2,8 @@ package intro.di
 
 import intro.di.network.AuthService
 import intro.di.network.AuthServiceImpl
+import intro.di.network.NetworkClient
 import motif.Expose
-import java.util.*
 
 @motif.Scope
 interface RootScope {
@@ -17,12 +17,12 @@ interface RootScope {
     @motif.Objects
     abstract class Objects {
         @Expose
-        fun profile(): Profile {
-            return Profile(UUID.randomUUID(), "aoeu")
+        fun networkClient(): NetworkClient {
+            return NetworkClient()
         }
 
-        fun authService(): AuthService {
-            return AuthServiceImpl()
+        fun authService(networkClient: NetworkClient): AuthService {
+            return AuthServiceImpl(networkClient)
         }
     }
 
