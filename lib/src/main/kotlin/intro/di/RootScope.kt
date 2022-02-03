@@ -4,7 +4,6 @@ import intro.di.network.AuthService
 import intro.di.network.AuthServiceImpl
 import motif.Expose
 import java.util.*
-import javax.inject.Named
 
 @motif.Scope
 interface RootScope {
@@ -13,7 +12,7 @@ interface RootScope {
     /**
      * @param profile Dynamic dependency.
      */
-    fun loggedInScope(): LoggedInScope
+    fun loggedInScope(profile: Profile): LoggedInScope
 
     @motif.Objects
     abstract class Objects {
@@ -22,18 +21,8 @@ interface RootScope {
             return Profile(UUID.randomUUID(), "aoeu")
         }
 
-        fun authService(@Named("email") email: String, @Named("password") password: String): AuthService {
-            return AuthServiceImpl(email, password)
-        }
-
-        @Named("email")
-        fun email(): String {
-            return "eric.liu@uber.com"
-        }
-
-        @Named("password")
-        fun password(): String {
-            return "password"
+        fun authService(): AuthService {
+            return AuthServiceImpl()
         }
     }
 

@@ -2,8 +2,11 @@ package intro.di
 
 import intro.di.network.RideRequestService
 
-class LoggedInController(private val profile: Profile, private val rideRequestService: RideRequestService) {
+class LoggedInController(
+    private val profile: Profile,
+    private val rideRequestService: RideRequestService
+) {
     fun requestARide() {
-        rideRequestService.requestRide(profile.uuid, profile.authToken)
+        rideRequestService.requestRide()
     }
 }

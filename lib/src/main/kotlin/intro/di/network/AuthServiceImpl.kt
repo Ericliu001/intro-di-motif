@@ -3,8 +3,8 @@ package intro.di.network
 import intro.di.Profile
 import java.util.*
 
-class AuthServiceImpl(email: String, password: String) : AuthService {
-    override fun login(): Profile {
+class AuthServiceImpl() : AuthService {
+    override fun login(email: String, password: String): Profile {
         return Profile(UUID.randomUUID(), "xxxx-xxxx-xxxx")
     }
 }

@@ -1,9 +1,9 @@
 package intro.di.network
 
-import java.util.*
+import intro.di.Profile
 
-class RideRequestServiceImpl: RideRequestService {
-    override fun requestRide(uuid: UUID, authToken: String) {
+class RideRequestServiceImpl(profile: Profile) : RideRequestService {
+    override fun requestRide() {
         //no-op.
     }
 }
