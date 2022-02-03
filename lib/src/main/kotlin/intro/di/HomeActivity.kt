@@ -1,21 +1,22 @@
 package intro.di
 
+import intro.di.network.AuthServiceImpl
+import intro.di.network.NetworkClient
+import intro.di.network.RideRequestServiceImpl
+
 class HomeActivity {
-    private lateinit var rootScope: RootScope
     private var profile: Profile? = null
 
     fun onCreate() {
-        rootScope = RootScopeImpl(object : RootScopeImpl.Dependencies {
-        })
     }
 
     fun login() {
-        profile = rootScope.authService().login("eric@uber.com", "xxxx")
+        profile = AuthServiceImpl(NetworkClient()).login("eric@uber.com", "xxxx")
     }
 
     fun requestRide() {
         profile?.let {
-            rootScope.loggedInScope(it).rideRequestService().requestRide()
+            RideRequestServiceImpl(it, NetworkClient()).requestRide()
         }
     }
 }
