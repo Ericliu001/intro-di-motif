@@ -1,22 +1,19 @@
 package intro.di
 
-import intro.di.network.AuthServiceImpl
-import intro.di.network.NetworkClient
-import intro.di.network.RideRequestServiceImpl
-
 class HomeActivity {
-    private var profile: Profile? = null
 
     fun onCreate() {
     }
 
+    /**
+     * Login the user.
+     *//**/
     fun login() {
-        profile = AuthServiceImpl(NetworkClient()).login("eric@uber.com", "xxxx")
     }
 
+    /**
+     * Request a ride.
+     */
     fun requestRide() {
-        profile?.let {
-            RideRequestServiceImpl(it, NetworkClient()).requestRide()
-        }
     }
 }
