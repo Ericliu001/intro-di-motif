@@ -7,8 +7,8 @@
  */
 
 plugins {
-    kotlin("jvm") version "1.5.10"
-    kotlin("kapt") version "1.5.10"
+    kotlin("jvm") version "1.6.0"
+    kotlin("kapt") version "1.6.0"
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
@@ -21,8 +21,8 @@ repositories {
 
 dependencies {
 
-    kapt("com.uber.motif:motif-compiler:0.3.4")
-    implementation("com.uber.motif:motif:0.3.4")
+    kapt("com.uber.motif:motif-compiler:0.3.8")
+    implementation("com.uber.motif:motif:0.3.8")
     // Align versions of all Kotlin components
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 
