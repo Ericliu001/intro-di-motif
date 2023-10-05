@@ -7,8 +7,8 @@
  */
 
 plugins {
-    kotlin("jvm") version "1.7.0"
-    kotlin("kapt") version "1.7.0"
+    kotlin("jvm") version "1.9.10"
+    kotlin("kapt") version "1.9.10"
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
